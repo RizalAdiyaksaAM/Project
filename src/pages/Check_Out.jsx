@@ -1,15 +1,13 @@
 import React from "react";
 import { Navbar } from "../assets/components/Navbar";
-import { Maps } from "../assets/components/Maps";
-import { Catalog } from "../assets/components/Catalog";
 import { Footer } from "../assets/components/Footer";
+import { Check_Out_section } from "../assets/components/Check_Out_section";
 
-export const Profile = () => {
+export const Check_Out = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <Maps></Maps>
-      <Catalog></Catalog>
+      <Check_Out_section></Check_Out_section>
       <Footer></Footer>
     </div>
   );

@@ -8,7 +8,8 @@ import { Description } from "../pages/Description";
 import { Cart } from "../pages/Cart";
 import { Check_Out } from "../pages/Check_Out";
 import { Notification } from "../pages/Notification";
-
+import Penjual_Pesanan from "../pages/penjual_pesanan";
+import Penjual_Produk from "../pages/penjual_produk";
 
 export const RouterList = () => {
   return (
@@ -22,6 +23,8 @@ export const RouterList = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/check_out" element={<Check_Out />} />
         <Route path="/notification" element={<Notification />} />
+        <Route path="/penjual_pesanan" element={<Penjual_Pesanan />} />
+        <Route path="/penjual_produk" element={<Penjual_Produk />} />
       </Routes>
     </BrowserRouter>
   );

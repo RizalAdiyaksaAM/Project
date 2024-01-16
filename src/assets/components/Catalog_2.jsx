@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import profile_profile_card_image1 from "../img/profile_card-img-1.png";
 import profile_profile_card_image2 from "../img/profile_card-img-2.png";
 import profile_profile_card_image3 from "../img/profile_card-img-3.png";
@@ -7,10 +7,24 @@ import profile_profile_card_image5 from "../img/profile_card-img-5.png";
 import profile_profile_card_image6 from "../img/profile_card-img-6.png";
 import profile_profile_card_image7 from "../img/profile_card-img-7.png";
 import profile_profile_card_image8 from "../img/profile_card-img-8.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import getPenjual from "../../redux/action/getPenjual";
 
 export const Catalog_2 = () => {
   const navigate = useNavigate();
+  const params = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPenjual(params.penjualId))
+
+  },[dispatch, params.penjualId]);
+
+  const dataPenjual = useSelector((state) => state.penjual)
+  console.log(dataPenjual, "data");
+
+
   return (
     <div>
       <section className="catalog w- py-[100px] h-screen bg-[#F8F8F8]">

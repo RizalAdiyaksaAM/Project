@@ -17,15 +17,12 @@ export default function Penjual_Produk_section() {
               <img src={logo} alt="" className="ic" />
             </a>
             <div className="nav-left-menu flex gap-[16px] flex-col">
-              <a href="#" className="flex items-center gap-[4px]">
-                <img src={ic_home} alt="" />
-                Home
-              </a>
-              <a href="#" className="flex items-center gap-[4px]">
+              
+              <a href="/penjual_produk" className="flex items-center gap-[4px]">
                 <img src={ic_produk} alt="" />
                 Produk
               </a>
-              <a href="#" className="flex items-center gap-[4px]">
+              <a href="/penjual_pesanan" className="flex items-center gap-[4px]">
                 <img src={ic_pesanan} alt="" />
                 Pesanan
               </a>

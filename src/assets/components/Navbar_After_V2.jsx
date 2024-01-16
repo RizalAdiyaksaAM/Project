@@ -12,8 +12,11 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/react";
+import { LogOut } from "../../redux/action/auth/authLoginUser";
+import { useDispatch } from "react-redux";
 
 export default function Navbar_After_V2() {
+  const dispatch = useDispatch();
   const items = [
     {
       key: "new",
@@ -39,6 +42,11 @@ export default function Navbar_After_V2() {
           <div className="py-[14px] px-[4rem] ">
             <div className="flex justify-end items-center w-full">
               <div className="flex space-x-6 ">
+              <Button onClick={() => {
+                  dispatch(LogOut());
+                }} className="text-base border-2 font-semibold text-white  bg-red-500">
+                    Logout
+                  </Button>
                 <div className="space-x-2 flex items-center gap-[32px]">
                   <a href="#" className="profile">
                     <img src={ic_profile} alt="" className="max-w-[55px]" />

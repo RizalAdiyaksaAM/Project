@@ -22,7 +22,7 @@ export const Catalog = () => {
 
   },[dispatch, params.penjualId]);
 
-  const dataPenjual = useSelector((state) => state.penjual.penjual[0].produk)
+  const dataPenjual = useSelector((state) => state.penjual)
   console.log(dataPenjual, "data");
 
   return (
@@ -44,7 +44,7 @@ export const Catalog = () => {
           <div className="content-bottom-left subtext flex flex-col gap-[10px]">
             <h3 className="subtext-title font-semibold text-xl">Semua Produk</h3>
             <div className="wrapper-card grid grid-cols-4 justify-between gap-[30px]">
-              {dataPenjual && dataPenjual.map((produk) => (
+              {dataPenjual && dataPenjual.penjual && dataPenjual.penjual[0] && dataPenjual.penjual[0].produk.map((produk) => (
               <div onClick={() => {
                   navigate(`/description`);
                 }} className="card rounded-[8px] bg-white shadow-black overflow-hidden drop-shadow-lg">

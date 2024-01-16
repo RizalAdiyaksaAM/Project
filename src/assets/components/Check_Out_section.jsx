@@ -5,8 +5,10 @@ import { Button, Checkbox } from "@nextui-org/react";
 import ic_dropDown from "../../assets/img/checkOut-ic-dropDown.svg";
 import image_paymentDana from "../../assets/img/checkOut-img-dana.png";
 import image_paymentCOD from "../../assets/img/checkOut-img-cod.png";
+import { useNavigate } from "react-router-dom";
 
 export const Check_Out_section = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <section className="section-check-out bg-[#F8F8F8] h-screen py-[100px]">
@@ -71,7 +73,8 @@ export const Check_Out_section = () => {
               <h5>Total Harga</h5>
               <p className="price">Rp 16.000</p>
             </div>
-            <Button className="btn btn-primary w-full" color="primary">
+            <Button onClick={() => {
+              navigate(`/home_pembeli`) }}  className="btn btn-primary w-full" color="primary">
               Beli
             </Button>
             {/* <a href="#" className="btn btn-primary">

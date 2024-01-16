@@ -43,10 +43,10 @@ export const Description_Section = () => {
                   <span>tersedia</span>
                 </div>
                 <div className="wrap-btn flex gap-[16px]">
-                  <a href="#" className="btn btn-primary">
+                  <a href="/cart" className="btn btn-primary">
                     + Keranjang
                   </a>
-                  <a href="#" className="btn btn-outline">
+                  <a href="/check_out" className="btn btn-outline">
                     Beli Sekarang
                   </a>
                 </div>

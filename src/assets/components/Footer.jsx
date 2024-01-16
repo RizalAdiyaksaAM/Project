@@ -7,7 +7,7 @@ import ic__phone from "../img/phone.svg"
 export const Footer = () => {
   return (
     <section className="footer bg-[#142309] text-white py-[48px]">
-      <div className="container mx-auto flex flex-col gap-6">
+      <div className="container mx-[4rem] w-auto flex flex-col gap-6">
         <div className="content-top">
           <a href="#" className="logo">
             <img src={logo} alt="" />

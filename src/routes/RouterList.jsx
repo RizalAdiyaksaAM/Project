@@ -11,6 +11,7 @@ import { Notification } from "../pages/Notification";
 import Penjual_Pesanan from "../pages/penjual_pesanan";
 import Penjual_Produk from "../pages/penjual_produk";
 import { HomeAfter } from "../pages/HomeAfter";
+import Penjual_Produk_Second from "../pages/Penjual_Produk_Second";
 
 export const RouterList = () => {
   return (
@@ -27,6 +28,7 @@ export const RouterList = () => {
         <Route path="/notification" element={<Notification />} />
         <Route path="/penjual_pesanan" element={<Penjual_Pesanan />} />
         <Route path="/penjual_produk" element={<Penjual_Produk />} />
+        <Route path="/penjual_produk_edit" element={<Penjual_Produk_Second />} />
       </Routes>
     </BrowserRouter>
   );

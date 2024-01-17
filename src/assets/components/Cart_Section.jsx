@@ -3,8 +3,10 @@ import React from "react";
 import ic_profile from "../../assets/img/cart_ic-User_fill.png";
 import ic_trash from "../../assets/img/cart_ic-trash.png";
 import image_preview from "../../assets/img/description-preview-img.png";
+import { useNavigate } from "react-router-dom";
 
 export const Cart_Section = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <section className="section-cart bg-[#F8F8F8] py-[100px]">
@@ -127,7 +129,9 @@ export const Cart_Section = () => {
               <h5>Total Harga</h5>
               <p className="price">Rp 16.000</p>
             </div>
-            <Button className="btn btn-primary w-full" color="primary">
+            <Button onClick={() => {
+                  navigate(`/home_pembeli`);
+                }}   className="btn btn-primary w-full" color="primary">
               Beli
             </Button>
             {/* <a href="#" className="btn btn-primary">

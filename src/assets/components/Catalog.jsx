@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import profile_profile_card_image1 from "../img/profile_card-img-1.png";
 import profile_profile_card_image2 from "../img/profile_card-img-2.png";
 import profile_profile_card_image3 from "../img/profile_card-img-3.png";
@@ -7,188 +7,79 @@ import profile_profile_card_image5 from "../img/profile_card-img-5.png";
 import profile_profile_card_image6 from "../img/profile_card-img-6.png";
 import profile_profile_card_image7 from "../img/profile_card-img-7.png";
 import profile_profile_card_image8 from "../img/profile_card-img-8.png";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import getPenjual from "../../redux/action/getPenjual";
 
 export const Catalog = () => {
+
+  const navigate = useNavigate();
+  const params = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPenjual(params.penjualId))
+
+  },[dispatch, params.penjualId]);
+
+  const dataPenjual = useSelector((state) => state.penjual)
+  console.log(dataPenjual, "data");
+
   return (
     <section className="catalog py-[100px] bg-[#F8F8F8]">
       <div className="container mx-auto flex flex-col gap-8">
-        <div className="content-top flex gap-[24px] pb-[10px] border-b-[3px] border-[#DDD]">
-          <button className="btn hover:text-[#62AF2F] focus:text-[#62AF2F] font-semibold">
+        <div className="content-top flex gap-[24px] pb-[10px] border-b-[3px] border-[#DDD] mx-8">
+          <button onClick={() => {
+                  navigate(`/profile_beranda`);
+                }} className="btn text-[#62AF2F] hover:text-[#62AF2F] focus:text-[#62AF2F] font-semibold">
             Beranda
           </button>
-          <button className="btn hover:text-[#62AF2F] focus:text-[#62AF2F] font-semibold">
+          <button onClick={() => {
+                  navigate(`/profile_product`);
+                }}  className="btn hover:text-[#62AF2F] focus:text-[#62AF2F] font-semibold">
             Produk
           </button>
         </div>
-        <div className="content-bottom flex justify-between items-start gap-[30px]">
+        <div className="content-bottom flex justify-between items-start  mx-8">
           <div className="content-bottom-left subtext flex flex-col gap-[10px]">
-            <h3 className="subtext-title">Semua Produk</h3>
+            <h3 className="subtext-title font-semibold text-xl">Semua Produk</h3>
             <div className="wrapper-card grid grid-cols-4 justify-between gap-[30px]">
-              <div className="card rounded-[8px] bg-white shadow-black overflow-hidden">
-                <img
+              {dataPenjual && dataPenjual.penjual && dataPenjual.penjual[0] && dataPenjual.penjual[0].produk.map((produk) => (
+              <div onClick={() => {
+                  navigate(`/description`);
+                }} className="card rounded-[8px] bg-white shadow-black overflow-hidden drop-shadow-lg">
+                <img         
                   src={profile_profile_card_image1}
                   alt=""
                   className="card-image w-full"
                 />
-                <div className="card-body pb-[12px] px-[10px] flex flex-col gap-[16px]">
+                <div className="card-body pb-[12px] px-[10px] flex flex-col gap-[16px]  ">
                   <div className="card-body-title title">
-                    <h4 className="title-display">Apel</h4>
-                    <span className="title-subdisplay">1/2 Kg</span>
+                    <h4 className="title-display text-lg font-semibold">{produk.nama}</h4>
+                    <span className="title-subdisplay">1/2 {produk.satuan}</span>
                   </div>
                   <div className="card-body-price price flex flex-col gap-[16px]">
-                    <h4 className="price-text">Rp 15.000</h4>
-                    <a href="#" className="btn btn-outline">
+                    <h4 className="price-text text-lg font-semibold">Rp{produk.harga}</h4>
+                    <a href="/cart" className="btn btn-outline">
                       + Keranjang
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="card rounded-[8px] bg-white shadow-black overflow-hidden">
-                <img
-                  src={profile_profile_card_image1}
-                  alt=""
-                  className="card-image w-full"
-                />
-                <div className="card-body pb-[12px] px-[10px] flex flex-col gap-[16px]">
-                  <div className="card-body-title title">
-                    <h4 className="title-display">Apel</h4>
-                    <span className="title-subdisplay">1/2 Kg</span>
-                  </div>
-                  <div className="card-body-price price flex flex-col gap-[16px]">
-                    <h4 className="price-text">Rp 15.000</h4>
-                    <a href="#" className="btn btn-outline">
-                      + Keranjang
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="card rounded-[8px] bg-white shadow-black overflow-hidden">
-                <img
-                  src={profile_profile_card_image1}
-                  alt=""
-                  className="card-image w-full"
-                />
-                <div className="card-body pb-[12px] px-[10px] flex flex-col gap-[16px]">
-                  <div className="card-body-title title">
-                    <h4 className="title-display">Apel</h4>
-                    <span className="title-subdisplay">1/2 Kg</span>
-                  </div>
-                  <div className="card-body-price price flex flex-col gap-[16px]">
-                    <h4 className="price-text">Rp 15.000</h4>
-                    <a href="#" className="btn btn-outline">
-                      + Keranjang
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="card rounded-[8px] bg-white shadow-black overflow-hidden">
-                <img
-                  src={profile_profile_card_image1}
-                  alt=""
-                  className="card-image w-full"
-                />
-                <div className="card-body pb-[12px] px-[10px] flex flex-col gap-[16px]">
-                  <div className="card-body-title title">
-                    <h4 className="title-display">Apel</h4>
-                    <span className="title-subdisplay">1/2 Kg</span>
-                  </div>
-                  <div className="card-body-price price flex flex-col gap-[16px]">
-                    <h4 className="price-text">Rp 15.000</h4>
-                    <a href="#" className="btn btn-outline">
-                      + Keranjang
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="card rounded-[8px] bg-white shadow-black overflow-hidden">
-                <img
-                  src={profile_profile_card_image1}
-                  alt=""
-                  className="card-image w-full"
-                />
-                <div className="card-body pb-[12px] px-[10px] flex flex-col gap-[16px]">
-                  <div className="card-body-title title">
-                    <h4 className="title-display">Apel</h4>
-                    <span className="title-subdisplay">1/2 Kg</span>
-                  </div>
-                  <div className="card-body-price price flex flex-col gap-[16px]">
-                    <h4 className="price-text">Rp 15.000</h4>
-                    <a href="#" className="btn btn-outline">
-                      + Keranjang
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="card rounded-[8px] bg-white shadow-black overflow-hidden">
-                <img
-                  src={profile_profile_card_image1}
-                  alt=""
-                  className="card-image w-full"
-                />
-                <div className="card-body pb-[12px] px-[10px] flex flex-col gap-[16px]">
-                  <div className="card-body-title title">
-                    <h4 className="title-display">Apel</h4>
-                    <span className="title-subdisplay">1/2 Kg</span>
-                  </div>
-                  <div className="card-body-price price flex flex-col gap-[16px]">
-                    <h4 className="price-text">Rp 15.000</h4>
-                    <a href="#" className="btn btn-outline">
-                      + Keranjang
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="card rounded-[8px] bg-white shadow-black overflow-hidden">
-                <img
-                  src={profile_profile_card_image1}
-                  alt=""
-                  className="card-image w-full"
-                />
-                <div className="card-body pb-[12px] px-[10px] flex flex-col gap-[16px]">
-                  <div className="card-body-title title">
-                    <h4 className="title-display">Apel</h4>
-                    <span className="title-subdisplay">1/2 Kg</span>
-                  </div>
-                  <div className="card-body-price price flex flex-col gap-[16px]">
-                    <h4 className="price-text">Rp 15.000</h4>
-                    <a href="#" className="btn btn-outline">
-                      + Keranjang
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="card rounded-[8px] bg-white shadow-black overflow-hidden">
-                <img
-                  src={profile_profile_card_image1}
-                  alt=""
-                  className="card-image w-full"
-                />
-                <div className="card-body pb-[12px] px-[10px] flex flex-col gap-[16px]">
-                  <div className="card-body-title title">
-                    <h4 className="title-display">Apel</h4>
-                    <span className="title-subdisplay">1/2 Kg</span>
-                  </div>
-                  <div className="card-body-price price flex flex-col gap-[16px]">
-                    <h4 className="price-text">Rp 15.000</h4>
-                    <a href="#" className="btn btn-outline">
-                      + Keranjang
-                    </a>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-          <div className="content-bottom-right check-out max-w-[416px] w-full flex flex-col gap-[10px] p-[16px]">
+          <div className="content-bottom-right check-out max-w-[500px] w-full flex flex-col gap-[10px] p-[16px] bg-white">
             <div className="location flex flex-col gap-[10px]">
-              <h4 className="location-title">Lokasi Drop Point</h4>
+              <h4 className="location-title font-bold text-lg">Lokasi Drop Point</h4>
               <div className="wrap flex items-center gap-[36px]">
-                <h5 className="location-site">Tanjung</h5>
+                <h5 className="location-site font-semibold text-lg text-[#62AF2F]">Tanjung</h5>
                 <h5 className="location-site">Karangpucung</h5>
                 <h5 className="location-site">Teluk</h5>
               </div>
             </div>
             <div className="drop-out flex flex-col gap-[10px]">
-              <div className="wrap flex items-center justify-start gap-[280px]">
+              <div className="wrap flex items-center justify-start gap-[340px] border-b-[1px] border-[#888888] " >
                 <h5 className="site">Lokasi</h5>
                 <h5 className="time">Jam</h5>
               </div>

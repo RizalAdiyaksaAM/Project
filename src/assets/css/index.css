@@ -2,3 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 @import url(./_buttons.css);
+
+/* Global Style */
+html,
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(./_buttons.css);
+
+/* Global Style */
+html,
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.custom-checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #62af2f;
+  border-radius: 50%;
+  margin-right: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-checkbox::before {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  font-weight: 700;
+  color: #62af2f;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.custom-checkbox:checked::before {
+  opacity: 1;
+}

@@ -12,8 +12,11 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/react";
+import { LogOut } from "../../redux/action/auth/authLoginUser";
+import { useDispatch } from "react-redux";
 
 export default function Navbar_After() {
+  const dispatch = useDispatch();
   const items = [
     {
       key: "new",
@@ -52,7 +55,8 @@ export default function Navbar_After() {
                     fill="#888888"
                   />
                 </svg>
-                <p>Notifikasi</p>
+                <a href="/notification" className="profile">Notifikasi</a>
+            
               </div>
               <div className="flex items-center justify-center gap-1">
                 <svg
@@ -121,8 +125,10 @@ export default function Navbar_After() {
               <div className="flex space-x-6 ">
                 <img src={shop} alt="" />
                 <div className="space-x-2 flex items-center gap-[32px]">
-                  <Button className="text-base border-2 font-semibold text-primaryhijau border-primaryhijau bg-transparent">
-                    Toko
+                  <Button onClick={() => {
+                  dispatch(LogOut());
+                }} className="text-base border-2 font-semibold text-white  bg-red-500">
+                    Logout
                   </Button>
                   <a href="#" className="profile">
                     <img src={ic_profile} alt="" className="max-w-[55px]" />

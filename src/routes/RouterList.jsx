@@ -10,23 +10,36 @@ import { Check_Out } from "../pages/Check_Out";
 import { Notification } from "../pages/Notification";
 import Penjual_Pesanan from "../pages/penjual_pesanan";
 import Penjual_Produk from "../pages/penjual_produk";
+import { HomeAfter } from "../pages/HomeAfter";
 import Penjual_Produk_Second from "../pages/Penjual_Produk_Second";
+import AddProductPage from "../pages/AddProductPage";
 
 export const RouterList = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home_pembeli" element={<HomeAfter />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/profile_beranda" element={<Profile_Beranda />} />
-        <Route path="/profile_product" element={<Profile_Product />} />
+        <Route
+          path="/profile_beranda/:penjualId"
+          element={<Profile_Beranda />}
+        />
+        <Route
+          path="/profile_product/:penjualId"
+          element={<Profile_Product />}
+        />
         <Route path="/description" element={<Description />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/check_out" element={<Check_Out />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/penjual_pesanan" element={<Penjual_Pesanan />} />
         <Route path="/penjual_produk" element={<Penjual_Produk />} />
-        <Route path="/penjual_produk_edit" element={<Penjual_Produk_Second />} />
+        <Route
+          path="/penjual_produk_edit"
+          element={<Penjual_Produk_Second />}
+        />
+        <Route path="/add/product" element={<AddProductPage />} />
       </Routes>
     </BrowserRouter>
   );

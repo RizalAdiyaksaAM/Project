@@ -10,10 +10,10 @@ import sayur2 from "../img/sayur2.png"
 export const Hero = () => {
   return (
     <section className="hero bg-abubg">
-      <div className="container mx-auto pt-[4.5rem] h-[51.875rem]">
+      <div className="container mx-auto pt-[4.5rem] h-[51.875rem] ">
         <div className="relative mx-[4rem]  ">
-          <div className="flex justify-center items-center rounded-[3rem] w-full bg-primaryhijau  ">
-            <div className=" space-y-4 ">
+          <div className="flex justify-center items-center rounded-[3rem]  w-full bg-primaryhijau  ">
+            <div className=" space-y-4 mx-4 ">
               <p className="text-5xl font-semibold text-white w-[41.625rem]">
                 Menyediakan Kebutuhan Sayuran Harian Anda
               </p>
@@ -38,7 +38,9 @@ export const Hero = () => {
           <div className="absolute -bottom-14 inset-x-[34rem] ">
             <img src={sayur2} alt="" />
           </div>
-          <div className="absolute  inset-x-[6.5rem] -bottom-[7rem] bg-white w-[74.0625rem] h-[11.1875rem] shadow-sm rounded-[1.5rem]">
+          <div className="flex justify-center my-[-4rem]">
+
+          <div className="absolute   bg-white w-[74.0625rem] h-[11.1875rem] shadow-sm rounded-[1.5rem]">
             <div className="h-full flex justify-around items-center">
               <div className=" flex justify-center items-center gap-2">
                 <img src={praktis} alt="" />
@@ -68,6 +70,7 @@ export const Hero = () => {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

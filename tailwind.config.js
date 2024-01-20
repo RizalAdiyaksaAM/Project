@@ -29,6 +29,11 @@ module.exports = {
     extend: {
 
     },
+    screens: {
+      mobile: "414px",
+      tablet: "834px",
+      desktop: "1440px",
+    },
   },
   darkMode: "class",
   plugins: [nextui()],

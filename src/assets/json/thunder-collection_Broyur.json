@@ -1,0 +1,570 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Broyur",
+    "dateExported": "2024-01-18T08:07:02.971Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "08c7df8b-920b-4db6-911c-4c2815c657d0",
+            "name": "All About User",
+            "containerId": "",
+            "created": "2024-01-17T06:21:00.695Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "60af91e8-7bd4-4fd1-8b29-8ddbfb379c4e",
+            "name": "All About Product",
+            "containerId": "",
+            "created": "2024-01-17T06:24:07.989Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "d3c74c1f-f843-4d9c-ac43-6500aa78a9c8",
+            "name": "All About Transaction",
+            "containerId": "",
+            "created": "2024-01-17T06:37:35.049Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "4d2952e6-a239-4383-8eae-9b221eacf73a",
+            "name": "All About Penjual",
+            "containerId": "",
+            "created": "2024-01-17T07:18:11.682Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "d3b5d812-9abe-4ca1-a057-4ee20783a75c",
+            "name": "All About Pembeli",
+            "containerId": "",
+            "created": "2024-01-17T07:18:56.546Z",
+            "sortNum": 50000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "e4f58ef9-8148-473f-9ad2-84c5ec867ca9",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "08c7df8b-920b-4db6-911c-4c2815c657d0",
+            "name": "Register User",
+            "url": "http://localhost:3000/api/v1/user/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-01-17T06:20:45.853Z",
+            "modified": "2024-01-17T10:34:23.140Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \n    \"nama\":\"Taufik Penjual\",\n    \"email\": \"taufikpenjual2@mail.com\",\n    \"password\":\"taufik123\",\n    \"alamat\":\"TELUK\",\n    \"role\": \"PENJUAL\"\n} ",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "760201f5-b892-44c7-8228-5999f813bf21",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "08c7df8b-920b-4db6-911c-4c2815c657d0",
+            "name": "Login User",
+            "url": "http://localhost:3000/api/v1/user/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-01-17T06:21:21.162Z",
+            "modified": "2024-01-17T07:14:16.695Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \n    \"email\": \"taufikpenjual@mail.com\",\n    \"password\":\"taufik123\"\n} \n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fc4931c0-42dc-4c10-88c5-a5ee74e09d74",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "08c7df8b-920b-4db6-911c-4c2815c657d0",
+            "name": "Get All Users",
+            "url": "http://localhost:3000/api/v1/user",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-01-17T06:21:57.842Z",
+            "modified": "2024-01-17T06:22:10.217Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cd7a1265-1a6c-4129-b94c-e47f8f321fd3",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "08c7df8b-920b-4db6-911c-4c2815c657d0",
+            "name": "Whoami",
+            "url": "http://localhost:3000/api/v1/user/whoami",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-01-17T06:22:44.596Z",
+            "modified": "2024-01-17T06:23:17.694Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0YXVmaWtAbWFpbC5jb20iLCJpYXQiOjE3MDU0NzI1ODgsImV4cCI6MTcwNTU1ODk4OH0.P9vMH-BGFugJ3MPHDSqUlP5jBZxcB3Qa7jhqCNMDiSc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a95832a4-86db-4182-9de8-6addf041b914",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "60af91e8-7bd4-4fd1-8b29-8ddbfb379c4e",
+            "name": "Create Product",
+            "url": "http://localhost:3000/api/v1/produk/add",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-01-17T06:24:20.116Z",
+            "modified": "2024-01-17T06:28:39.188Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nama\": \"Wortel\",\n  \"deskripsi\": \"Sayur\",\n  \"harga\": 1500,\n  \"satuan\": \"kg\",\n  \"stok\": 200,\n  \"kategori\": \"SAYUR\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0YXVmaWtAbWFpbC5jb20iLCJpYXQiOjE3MDU0NzI1ODgsImV4cCI6MTcwNTU1ODk4OH0.P9vMH-BGFugJ3MPHDSqUlP5jBZxcB3Qa7jhqCNMDiSc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7d94ac5e-c71f-44a0-9ea2-ae2e65d3fc1f",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "60af91e8-7bd4-4fd1-8b29-8ddbfb379c4e",
+            "name": "Get All Products",
+            "url": "http://localhost:3000/api/v1/produk",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-01-17T06:28:55.503Z",
+            "modified": "2024-01-17T06:29:25.658Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e9a3bf2e-756c-41b7-a9ba-7aabeed5cada",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "60af91e8-7bd4-4fd1-8b29-8ddbfb379c4e",
+            "name": "Get All Penjual",
+            "url": "http://localhost:3000/api/v1/produk/penjual",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-01-17T06:30:22.074Z",
+            "modified": "2024-01-17T06:30:46.929Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0YXVmaWtAbWFpbC5jb20iLCJpYXQiOjE3MDU0NzI1ODgsImV4cCI6MTcwNTU1ODk4OH0.P9vMH-BGFugJ3MPHDSqUlP5jBZxcB3Qa7jhqCNMDiSc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c7356d5c-a92b-48df-9203-76b2975118fa",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "60af91e8-7bd4-4fd1-8b29-8ddbfb379c4e",
+            "name": "Get Detail Penjual",
+            "url": "http://localhost:3000/api/v1/produk/penjual/1",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-01-17T06:31:38.372Z",
+            "modified": "2024-01-17T06:31:50.485Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0YXVmaWtAbWFpbC5jb20iLCJpYXQiOjE3MDU0NzI1ODgsImV4cCI6MTcwNTU1ODk4OH0.P9vMH-BGFugJ3MPHDSqUlP5jBZxcB3Qa7jhqCNMDiSc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d26fa507-a101-461e-aba7-e09e4cb37f80",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "60af91e8-7bd4-4fd1-8b29-8ddbfb379c4e",
+            "name": "Get Detail Product",
+            "url": "http://localhost:3000/api/v1/produk/1",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-01-17T06:32:08.875Z",
+            "modified": "2024-01-17T06:32:24.551Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0YXVmaWtAbWFpbC5jb20iLCJpYXQiOjE3MDU0NzI1ODgsImV4cCI6MTcwNTU1ODk4OH0.P9vMH-BGFugJ3MPHDSqUlP5jBZxcB3Qa7jhqCNMDiSc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b730b57c-5233-4aa4-85ac-d552c3c5a8e2",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "4d2952e6-a239-4383-8eae-9b221eacf73a",
+            "name": "Login Penjual",
+            "url": "http://localhost:3000/api/v1/user/login",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2024-01-17T07:19:16.426Z",
+            "modified": "2024-01-18T05:50:04.778Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \n    \"email\": \"taufikpenjual@mail.com\",\n    \"password\":\"taufik123\"\n} \n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e20237e4-9607-455b-8194-6434a4fc15f8",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "60af91e8-7bd4-4fd1-8b29-8ddbfb379c4e",
+            "name": "Get All Pembeli",
+            "url": "http://localhost:3000/api/v1/produk/pembeli/1",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-01-17T06:32:59.964Z",
+            "modified": "2024-01-17T06:33:12.739Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0895a0a9-7899-4dda-ad72-6e3927641792",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "60af91e8-7bd4-4fd1-8b29-8ddbfb379c4e",
+            "name": "Update Product",
+            "url": "http://localhost:3000/api/v1/produk/update/1",
+            "method": "PUT",
+            "sortNum": 110000,
+            "created": "2024-01-17T06:33:33.330Z",
+            "modified": "2024-01-17T06:34:52.925Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nama\": \"wortel updated\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0YXVmaWtAbWFpbC5jb20iLCJpYXQiOjE3MDU0NzI1ODgsImV4cCI6MTcwNTU1ODk4OH0.P9vMH-BGFugJ3MPHDSqUlP5jBZxcB3Qa7jhqCNMDiSc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "047bbfdb-1856-4acb-815e-db6ac487be79",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "60af91e8-7bd4-4fd1-8b29-8ddbfb379c4e",
+            "name": "Delete Product",
+            "url": "http://localhost:3000/api/v1/produk/delete/1",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-01-17T06:35:10.210Z",
+            "modified": "2024-01-17T06:35:19.005Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b01eea58-dc5a-45f0-a526-76bb383d9d9d",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "d3c74c1f-f843-4d9c-ac43-6500aa78a9c8",
+            "name": "Create Transaction",
+            "url": "http://localhost:3000/api/v1/transaksi/add",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2024-01-17T06:37:47.316Z",
+            "modified": "2024-01-17T06:41:28.877Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id_produk\": 1,\n  \"jumlah\": 9,\n  \"alamat\": \"Yogyakarta\",\n  \"status\": \"DIPROSES\",\n  \"pembayaran\": \"TRANSFER\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0YXVmaWtwZW1iZWxpQG1haWwuY29tIiwiaWF0IjoxNzA1NDczNjU5LCJleHAiOjE3MDU1NjAwNTl9.Ytm169_8fbgOiEKIv2c-4mjdnIXyCpGp3pYGzRcS58U"
+            },
+            "tests": []
+        },
+        {
+            "_id": "563ef04c-982f-4865-8793-a14cf7dd8810",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "d3c74c1f-f843-4d9c-ac43-6500aa78a9c8",
+            "name": "Get All My Transaction",
+            "url": "http://localhost:3000/api/v1/transaksi",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2024-01-17T06:49:38.978Z",
+            "modified": "2024-01-17T06:50:05.396Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0YXVmaWtwZW1iZWxpQG1haWwuY29tIiwiaWF0IjoxNzA1NDczNjU5LCJleHAiOjE3MDU1NjAwNTl9.Ytm169_8fbgOiEKIv2c-4mjdnIXyCpGp3pYGzRcS58U"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7b183b76-5806-48fb-86f4-ee10ce68a791",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "d3c74c1f-f843-4d9c-ac43-6500aa78a9c8",
+            "name": "Get Detail Transaction",
+            "url": "http://localhost:3000/api/v1/transaksi/1",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-01-17T06:50:42.891Z",
+            "modified": "2024-01-17T06:52:53.141Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0YXVmaWtwZW1iZWxpQG1haWwuY29tIiwiaWF0IjoxNzA1NDczNjU5LCJleHAiOjE3MDU1NjAwNTl9.Ytm169_8fbgOiEKIv2c-4mjdnIXyCpGp3pYGzRcS58U"
+            },
+            "tests": []
+        },
+        {
+            "_id": "deba3c34-7e70-437a-85b6-acebb6a4c9b6",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "d3c74c1f-f843-4d9c-ac43-6500aa78a9c8",
+            "name": "Edit Transaction",
+            "url": "http://localhost:3000/api/v1/transaksi/edit/1",
+            "method": "PUT",
+            "sortNum": 160000,
+            "created": "2024-01-17T06:51:30.075Z",
+            "modified": "2024-01-17T06:52:12.414Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"alamat\": \"Yogyakarta Updated\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0YXVmaWtwZW1iZWxpQG1haWwuY29tIiwiaWF0IjoxNzA1NDczNjU5LCJleHAiOjE3MDU1NjAwNTl9.Ytm169_8fbgOiEKIv2c-4mjdnIXyCpGp3pYGzRcS58U"
+            },
+            "tests": []
+        },
+        {
+            "_id": "aa63eba6-12e5-43cc-834b-b44d684ec06a",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "d3c74c1f-f843-4d9c-ac43-6500aa78a9c8",
+            "name": "Validate Transaction",
+            "url": "http://localhost:3000/api/v1/transaksi/update/1",
+            "method": "PUT",
+            "sortNum": 170000,
+            "created": "2024-01-17T07:13:28.923Z",
+            "modified": "2024-01-17T07:15:20.943Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"status\": \"DITOLAK\",\n  \"note\": \"Stock kurang\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0YXVmaWtwZW5qdWFsQG1haWwuY29tIiwiaWF0IjoxNzA1NDc1NjU2LCJleHAiOjE3MDU1NjIwNTZ9.L0axk0LeOdRwJkpKgQcm7IBmbdzLVriblK_t-_fV2jk"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c2c23b1c-41da-4648-86dd-1010a83a1a6f",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "4d2952e6-a239-4383-8eae-9b221eacf73a",
+            "name": "Create Product",
+            "url": "http://localhost:3000/api/v1/produk/add",
+            "method": "POST",
+            "sortNum": 180000,
+            "created": "2024-01-17T07:18:22.313Z",
+            "modified": "2024-01-17T07:28:29.935Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nama\": \"Daging Kambing\",\n  \"deskripsi\": \"Daging Kambing\",\n  \"harga\": 10000,\n  \"satuan\": \"1 kg\",\n  \"stok\": 20,\n  \"kategori\": \"DAGING_DAN_IKAN\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0YXVmaWtwZW5qdWFsQG1haWwuY29tIiwiaWF0IjoxNzA1NDc2MDMzLCJleHAiOjE3MDU1NjI0MzN9.JHIZvLmWtklnqFifg9F9rFCQXtREi7LVcQiHhxdHQbw"
+            },
+            "tests": []
+        },
+        {
+            "_id": "2ef5a431-bc32-4d54-80f3-014afd04373a",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "4d2952e6-a239-4383-8eae-9b221eacf73a",
+            "name": "Get All My Product",
+            "url": "http://localhost:3000/api/v1/produk/me",
+            "method": "GET",
+            "sortNum": 187500,
+            "created": "2024-01-17T07:24:13.389Z",
+            "modified": "2024-01-18T05:50:36.392Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0YXVmaWtwZW5qdWFsQG1haWwuY29tIiwiaWF0IjoxNzA1NTU3MDA0LCJleHAiOjE3MDU2NDM0MDR9.ryNFS9AXIIVGz2wCmcKt086ouRyuEzpAFuKTyZay2-8"
+            },
+            "tests": []
+        },
+        {
+            "_id": "09ea2af5-dadf-4538-ad1d-6d047d4ecf35",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "4d2952e6-a239-4383-8eae-9b221eacf73a",
+            "name": "Get Detail Product",
+            "url": "http://localhost:3000/api/v1/produk/2",
+            "method": "GET",
+            "sortNum": 195000,
+            "created": "2024-01-17T07:32:08.283Z",
+            "modified": "2024-01-17T07:33:09.668Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0YXVmaWtwZW5qdWFsQG1haWwuY29tIiwiaWF0IjoxNzA1NDc2MDMzLCJleHAiOjE3MDU1NjI0MzN9.JHIZvLmWtklnqFifg9F9rFCQXtREi7LVcQiHhxdHQbw"
+            },
+            "tests": []
+        },
+        {
+            "_id": "151a28ed-a168-4da0-bfbb-2365490a65ac",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "d3b5d812-9abe-4ca1-a057-4ee20783a75c",
+            "name": "Login Pembeli",
+            "url": "http://localhost:3000/api/v1/user/login",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2024-01-17T07:19:06.305Z",
+            "modified": "2024-01-17T07:37:11.748Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \n    \"email\": \"taufikpembeli@mail.com\",\n    \"password\":\"taufik123\"\n} \n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7813cd1f-ccba-4ce4-96ac-17cdeb2e407e",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "4d2952e6-a239-4383-8eae-9b221eacf73a",
+            "name": "Update Product",
+            "url": "http://localhost:3000/api/v1/produk/update/3",
+            "method": "PUT",
+            "sortNum": 202500,
+            "created": "2024-01-17T07:34:53.869Z",
+            "modified": "2024-01-18T07:52:32.999Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"stok\": 20\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0YXVmaWtwZW5qdWFsQG1haWwuY29tIiwiaWF0IjoxNzA1NTU3MDA0LCJleHAiOjE3MDU2NDM0MDR9.ryNFS9AXIIVGz2wCmcKt086ouRyuEzpAFuKTyZay2-8"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4d200ff5-ddca-4757-846c-aee757a5b412",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "4d2952e6-a239-4383-8eae-9b221eacf73a",
+            "name": "Validate Transaction",
+            "url": "http://localhost:3000/api/v1/transaksi/update/2",
+            "method": "PUT",
+            "sortNum": 212500,
+            "created": "2024-01-17T07:47:21.854Z",
+            "modified": "2024-01-18T06:01:23.848Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"status\": \"DITOLAK\",\n  \"note\": \"Stock kurang\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0YXVmaWtwZW5qdWFsQG1haWwuY29tIiwiaWF0IjoxNzA1NTU3NDk1LCJleHAiOjE3MDU2NDM4OTV9.DWIrhZSduPJDqE99ZavNC53N-IeXqPd-BVzTh7NI5xI"
+            },
+            "tests": []
+        },
+        {
+            "_id": "469fd289-3366-4f58-9907-c69841bd66eb",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "4d2952e6-a239-4383-8eae-9b221eacf73a",
+            "name": "Get My Transaction",
+            "url": "http://localhost:3000/api/v1/transaksi/me/?status=DITOLAK",
+            "method": "GET",
+            "sortNum": 222500,
+            "created": "2024-01-17T10:18:16.677Z",
+            "modified": "2024-01-18T06:02:36.943Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "status",
+                    "value": "DITOLAK",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0YXVmaWtwZW5qdWFsQG1haWwuY29tIiwiaWF0IjoxNzA1NTU3MDA0LCJleHAiOjE3MDU2NDM0MDR9.ryNFS9AXIIVGz2wCmcKt086ouRyuEzpAFuKTyZay2-8"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e04f8b46-94e1-4315-818d-6af2e4b56cdb",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "d3b5d812-9abe-4ca1-a057-4ee20783a75c",
+            "name": "Checkout",
+            "url": "http://localhost:3000/api/v1/transaksi/add",
+            "method": "POST",
+            "sortNum": 230000,
+            "created": "2024-01-17T07:35:56.835Z",
+            "modified": "2024-01-18T06:20:19.812Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "[{\n  \"id_produk\": 2,\n  \"jumlah\": 2,\n  \"alamat\": \"yogyakarta\",\n  \"pembayaran\": \"TRANSFER\"\n},{\n  \"id_produk\": 3,\n  \"jumlah\": 2,\n  \"alamat\": \"yogyakarta\",\n  \"pembayaran\": \"TRANSFER\"\n}\n]",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0YXVmaWtwZW1iZWxpQG1haWwuY29tIiwiaWF0IjoxNzA1NTU3MDQ4LCJleHAiOjE3MDU2NDM0NDh9.d1yWDZOmr000kkejadJtm5Gorc9gU4WqVIuXI9PA4ac"
+            },
+            "tests": []
+        },
+        {
+            "_id": "725b108c-bc71-460a-873e-9ad8eb5d7103",
+            "colId": "5a4a3ab9-e7e8-45d8-b6e9-3ce905d048a9",
+            "containerId": "d3b5d812-9abe-4ca1-a057-4ee20783a75c",
+            "name": "Get My Transaction",
+            "url": "http://localhost:3000/api/v1/transaksi/me/",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2024-01-17T07:43:24.888Z",
+            "modified": "2024-01-18T05:51:51.687Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ0YXVmaWtwZW1iZWxpQG1haWwuY29tIiwiaWF0IjoxNzA1NTU3MDQ4LCJleHAiOjE3MDU2NDM0NDh9.d1yWDZOmr000kkejadJtm5Gorc9gU4WqVIuXI9PA4ac"
+            },
+            "tests": []
+        }
+    ]
+}

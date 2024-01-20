@@ -1,12 +1,11 @@
-
-
 export const endpoint = {
-    LOGIN : "/api/v1/user/login",
-    REGISTER : "/api/v1/user/register",
-    USER : (alamat) => {
-        return `/api/v1/user/?alamat=${alamat}`;
-    },
-    USER_PENJUAL : (id) => {
-        return `/api/v1/produk/pembeli/${id}`
-    } 
+  LOGIN: "/api/v1/user/login",
+  REGISTER: "/api/v1/user/register",
+  USER: (alamat) => {
+    return `/api/v1/user/?alamat=${alamat}`;
+  },
+  USER_PENJUAL: (id) => {
+    return `/api/v1/produk/pembeli/${id}`;
+  },
+  ADD_PRODUCT: "/api/v1/produk/add",
 };

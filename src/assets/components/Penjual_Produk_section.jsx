@@ -17,12 +17,14 @@ export default function Penjual_Produk_section() {
               <img src={logo} alt="" className="ic" />
             </a>
             <div className="nav-left-menu flex gap-[16px] flex-col">
-              
               <a href="/penjual_produk" className="flex items-center gap-[4px]">
                 <img src={ic_produk} alt="" />
                 Produk
               </a>
-              <a href="/penjual_pesanan" className="flex items-center gap-[4px]">
+              <a
+                href="/penjual_pesanan"
+                className="flex items-center gap-[4px]"
+              >
                 <img src={ic_pesanan} alt="" />
                 Pesanan
               </a>
@@ -31,7 +33,7 @@ export default function Penjual_Produk_section() {
           <div className="pesanan bg-white w-full flex flex-col p-[16px] gap-[16px]">
             <div className="wrap flex justify-between items-center">
               <h3>Daftar Produk</h3>
-              <a href="#" className="btn btn-primary">
+              <a href="/add/product" className="btn btn-primary">
                 + Tambah Produk
               </a>
             </div>

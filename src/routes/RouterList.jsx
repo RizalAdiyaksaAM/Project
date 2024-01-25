@@ -29,7 +29,7 @@ export const RouterList = () => {
           path="/profile_product/:penjualId"
           element={<Profile_Product />}
         />
-        <Route path="/description" element={<Description />} />
+        <Route path="/description/:productId" element={<Description />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/check_out" element={<Check_Out />} />
         <Route path="/notification" element={<Notification />} />

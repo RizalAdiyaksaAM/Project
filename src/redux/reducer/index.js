@@ -3,6 +3,7 @@ import authLogin from "./auth/authLogin";
 import authRegiste from "./auth/authRegiste";
 import GetUser from "./GetUser";
 import GetPelanggan from "./GetPelanggan";
+import GetDetailProduct from "./product/GetDetailProduct";
 
 
 export default combineReducers({
@@ -10,5 +11,6 @@ export default combineReducers({
     login : authLogin,
     regis: authRegiste,
     user : GetUser,
-    penjual : GetPelanggan
+    penjual : GetPelanggan,
+    detail : GetDetailProduct
 })

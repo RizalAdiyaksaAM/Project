@@ -35,19 +35,7 @@ export const Navbar = () => {
   const items = [
     {
       key: "new",
-      label: "New file",
-    },
-    {
-      key: "copy",
-      label: "Copy link",
-    },
-    {
-      key: "edit",
-      label: "Edit file",
-    },
-    {
-      key: "delete",
-      label: "Delete file",
+      label: "Purwokerto Selatan",
     },
   ];
 
@@ -139,7 +127,7 @@ export const Navbar = () => {
                     <Button
                       variant="light"
                       className="flex justify-center items-center">
-                      <p className="text-base">Area Pengiriman</p>
+                      <p className="text-base">Purwokerto Selatan</p>
                       <img src={dropdown} alt="" />
                     </Button>
                   </DropdownTrigger>

@@ -1,12 +1,29 @@
 import { Navbar } from "@nextui-org/react";
-import React from "react";
+import React, { useEffect } from "react";
 import imgMaps from "../img/img-maps.png";
 import img__profile from "../img/img-profile.png";
 import ic__circle from "../img/ic-circle.svg";
 import ic__pin from "../img/ic-pin.svg";
 import bg__gradient from "../img/bg-gradient.png";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import getPenjual from "../../redux/action/getPenjual";
 
 export const Maps = () => {
+
+  const navigate = useNavigate();
+  const params = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPenjual(params.penjualId))
+
+  },[dispatch, params.penjualId]);
+
+  const dataPenjual = useSelector((state) => state.penjual)
+
+  
+  
   return (
     <div>
       <section className="maps">
@@ -20,7 +37,7 @@ export const Maps = () => {
             />
             <div className="profile-text">
               <h3 className="profile-text-title text-2xl font-semibold">
-                Malika
+                {dataPenjual && dataPenjual.penjual && dataPenjual.penjual[0] && dataPenjual.penjual[0].nama}
               </h3>
               <p className="profile-text-status flex align-middle gap-2">
                 <span className="flex">
@@ -32,7 +49,7 @@ export const Maps = () => {
                 <span className="flex">
                   <img src={ic__pin} alt="" />
                 </span>
-                Purwokerto Selatan
+                {dataPenjual && dataPenjual.penjual && dataPenjual.penjual[0] && dataPenjual.penjual[0].alamat}
               </p>
             </div>
           </div>

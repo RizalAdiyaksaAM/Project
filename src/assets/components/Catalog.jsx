@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import profile_profile_card_image1 from "../img/profile_card-img-1.png";
 import profile_profile_card_image2 from "../img/profile_card-img-2.png";
 import profile_profile_card_image3 from "../img/profile_card-img-3.png";
@@ -10,32 +10,36 @@ import profile_profile_card_image8 from "../img/profile_card-img-8.png";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import getPenjual from "../../redux/action/getPenjual";
+import getKategori from "../../redux/action/product/get-kategori";
 
 export const Catalog = () => {
 
   const navigate = useNavigate();
   const params = useParams();
   const dispatch = useDispatch();
+  
 
   useEffect(() => {
     dispatch(getPenjual(params.penjualId))
 
   },[dispatch, params.penjualId]);
 
-  const dataPenjual = useSelector((state) => state.penjual)
-  console.log(dataPenjual, "data");
+
+
+  const dataPenjual = useSelector((state) => state.penjual.penjual[0])
+
 
   return (
     <section className="catalog py-[100px] bg-[#F8F8F8]">
       <div className="container mx-auto flex flex-col gap-8">
         <div className="content-top flex gap-[24px] pb-[10px] border-b-[3px] border-[#DDD] mx-8">
           <button onClick={() => {
-                  navigate(`/profile_beranda`);
+                  navigate(`/profile_beranda/${dataPenjual.id}`);
                 }} className="btn text-[#62AF2F] hover:text-[#62AF2F] focus:text-[#62AF2F] font-semibold">
             Beranda
           </button>
           <button onClick={() => {
-                  navigate(`/profile_product`);
+                  navigate(`/profile_product/${dataPenjual.id}`);
                 }}  className="btn hover:text-[#62AF2F] focus:text-[#62AF2F] font-semibold">
             Produk
           </button>
@@ -44,9 +48,9 @@ export const Catalog = () => {
           <div className="content-bottom-left subtext flex flex-col gap-[10px]">
             <h3 className="subtext-title font-semibold text-xl">Semua Produk</h3>
             <div className="wrapper-card grid grid-cols-4 justify-between gap-[30px]">
-              {dataPenjual && dataPenjual.penjual && dataPenjual.penjual[0] && dataPenjual.penjual[0].produk.map((produk) => (
+              {dataPenjual && dataPenjual.produk.map((produk) => (
               <div onClick={() => {
-                  navigate(`/description`);
+                  navigate(`/description/${produk.id}`);
                 }} className="card rounded-[8px] bg-white shadow-black overflow-hidden drop-shadow-lg">
                 <img         
                   src={profile_profile_card_image1}

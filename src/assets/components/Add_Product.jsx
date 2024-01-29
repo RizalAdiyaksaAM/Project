@@ -17,7 +17,7 @@ const Add_Product = () => {
     satuan: "",
     kategori: "",
     stok: 0,
-    image: null,
+    image: [],
   });
 
   console.log(formData, "form data");
@@ -29,9 +29,7 @@ const Add_Product = () => {
 
   const handleImageChange = (e) => {
     const fileList = e.target.files;
-    const imageArray = Array.from(fileList).map((file) =>
-      URL.createObjectURL(file)
-    );
+    const imageArray = Array.from(fileList).map((file) => URL.createObjectURL(file));
     const { name } = e.target;
 
     setFormData({ ...formData, [name]: fileList[0] });
@@ -61,10 +59,7 @@ const Add_Product = () => {
                 <img src={ic_produk} alt="" />
                 Produk
               </a>
-              <a
-                href="/penjual_pesanan"
-                className="flex items-center gap-[4px]"
-              >
+              <a href="/penjual_pesanan" className="flex items-center gap-[4px]">
                 <img src={ic_pesanan} alt="" />
                 Pesanan
               </a>
@@ -76,17 +71,11 @@ const Add_Product = () => {
                 <img src={logo} alt="" className="ic" />
               </a>
               <div className="nav-left-menu flex gap-[16px] flex-col">
-                <a
-                  href="/penjual_produk"
-                  className="flex items-center gap-[4px]"
-                >
+                <a href="/penjual_produk" className="flex items-center gap-[4px]">
                   <img src={ic_produk} alt="" />
                   Produk
                 </a>
-                <a
-                  href="/penjual_pesanan"
-                  className="flex items-center gap-[4px]"
-                >
+                <a href="/penjual_pesanan" className="flex items-center gap-[4px]">
                   <img src={ic_pesanan} alt="" />
                   Pesanan
                 </a>
@@ -110,17 +99,12 @@ const Add_Product = () => {
               </p>
             </div>
             <div className="bg-white w-full rounded-md p-4">
-              <h1 className="text-[#142309] font-semibold text-lg">
-                Tambah Produk
-              </h1>
+              <h1 className="text-[#142309] font-semibold text-lg">Tambah Produk</h1>
               <hr className="my-2 bg-abufont" />
               <h2 className="mb-4 text-black font-medium">Informasi Produk</h2>
               <div className="flex flex-col gap-2">
                 <div className="grid grid-cols-3">
-                  <label
-                    htmlFor="product_name"
-                    className="col-span-3 md:col-span-1 mb-2 md:mb-0 text-[#142309] font-medium"
-                  >
+                  <label htmlFor="product_name" className="col-span-3 md:col-span-1 mb-2 md:mb-0 text-[#142309] font-medium">
                     Nama Sayur
                   </label>
                   <input
@@ -133,10 +117,7 @@ const Add_Product = () => {
                   />
                 </div>
                 <div className="grid grid-cols-3">
-                  <label
-                    htmlFor="stok"
-                    className="col-span-3 md:col-span-1 mb-2 md:mb-0 text-[#142309] font-medium"
-                  >
+                  <label htmlFor="stok" className="col-span-3 md:col-span-1 mb-2 md:mb-0 text-[#142309] font-medium">
                     Stok
                   </label>
                   <input
@@ -149,25 +130,14 @@ const Add_Product = () => {
                   />
                 </div>
                 <div className="grid grid-cols-3">
-                  <label
-                    htmlFor="category"
-                    className="col-span-3 md:col-span-1 mb-2 md:mb-0 text-[#142309] font-medium"
-                  >
+                  <label htmlFor="category" className="col-span-3 md:col-span-1 mb-2 md:mb-0 text-[#142309] font-medium">
                     Kategori
                   </label>
-                  <select
-                    name="kategori"
-                    value={formData.kategori}
-                    onChange={handleInputChange}
-                    id="kategori"
-                    className="col-span-3 md:col-span-2 outline outline-2 outline-[#F8F8F8] bg-transparent px-2 py-1 rounded-md"
-                  >
+                  <select name="kategori" value={formData.kategori} onChange={handleInputChange} id="kategori" className="col-span-3 md:col-span-2 outline outline-2 outline-[#F8F8F8] bg-transparent px-2 py-1 rounded-md">
                     <option value="SAYUR">Sayur</option>
                     <option value="DAGING_DAN_IKAN">Daging dan Ikan</option>
                     <option value="BUAH">Buah</option>
-                    <option value="TELUR_TAHU_TEMPE">
-                      Telur, Tahu dan Tempe
-                    </option>
+                    <option value="TELUR_TAHU_TEMPE">Telur, Tahu dan Tempe</option>
                   </select>
                 </div>
               </div>
@@ -176,51 +146,24 @@ const Add_Product = () => {
               <h2 className="mb-4 text-black font-medium">Detail Produk</h2>
               <div className="flex flex-col gap-2">
                 <div className="grid grid-cols-3">
-                  <label
-                    htmlFor="product_images"
-                    className="col-span-3 md:col-span-1 text-black font-medium mb-2"
-                  >
+                  <label htmlFor="product_images" className="col-span-3 md:col-span-1 text-black font-medium mb-2">
                     Foto Produk
                   </label>
-                  <input
-                    name="image"
-                    type="file"
-                    id="image"
-                    accept="image/*"
-                    onChange={handleImageChange}
-                    multiple
-                  />
+                  <input name="image" type="file" id="image" accept="image/*" onChange={handleImageChange} multiple />
                   <div className="col-span-3 flex gap-2 mt-4">
                     {images?.map((image, index) => (
-                      <img
-                        key={index}
-                        src={image}
-                        alt={`Preview ${index + 1}`}
-                        className="w-16 h-16 object-cover rounded-md"
-                      />
+                      <img key={index} src={image} alt={`Preview ${index + 1}`} className="w-16 h-16 object-cover rounded-md" />
                     ))}
                   </div>
                 </div>
                 <div className="grid grid-cols-3 w-full">
                   <div className="flex flex-col gap-2 col-span-3 md:col-span-1">
-                    <label
-                      htmlFor="description"
-                      className="col-span-3 md:col-span-1 text-black font-medium"
-                    >
+                    <label htmlFor="description" className="col-span-3 md:col-span-1 text-black font-medium">
                       Deskripsi Produk
                     </label>
-                    <p className="col-span-3 md:col-span-1 text-sm text-abufont">
-                      Tulis Deskripsi produkmu maximal 250 kata
-                    </p>
+                    <p className="col-span-3 md:col-span-1 text-sm text-abufont">Tulis Deskripsi produkmu maximal 250 kata</p>
                   </div>
-                  <textarea
-                    name="deskripsi"
-                    value={formData.deskripsi}
-                    onChange={handleInputChange}
-                    id="deskripsi"
-                    rows="7"
-                    className="p-2 col-span-3 md:col-span-2 outline outline-2 outline-abubg rounded-md"
-                  ></textarea>
+                  <textarea name="deskripsi" value={formData.deskripsi} onChange={handleInputChange} id="deskripsi" rows="7" className="p-2 col-span-3 md:col-span-2 outline outline-2 outline-abubg rounded-md"></textarea>
                 </div>
               </div>
             </div>
@@ -228,29 +171,17 @@ const Add_Product = () => {
               <h2 className="mb-4 text-black font-medium">Harga</h2>
               <div className="flex flex-col gap-2">
                 <div className="grid grid-cols-3">
-                  <label
-                    htmlFor="type"
-                    className="col-span-3 md:col-span-1 text-[#142309] font-medium mb-2"
-                  >
+                  <label htmlFor="type" className="col-span-3 md:col-span-1 text-[#142309] font-medium mb-2">
                     Jenis Satuan
                   </label>
-                  <select
-                    name="satuan"
-                    value={formData.satuan}
-                    onChange={handleInputChange}
-                    id="satuan"
-                    className="col-span-3 md:col-span-2 outline outline-2 outline-abubg bg-transparent px-2 py-1 rounded-md"
-                  >
+                  <select name="satuan" value={formData.satuan} onChange={handleInputChange} id="satuan" className="col-span-3 md:col-span-2 outline outline-2 outline-abubg bg-transparent px-2 py-1 rounded-md">
                     <option value="sachet">Sachet</option>
                     <option value="kg">Kg</option>
                     <option value="ikat">Ikat</option>
                   </select>
                 </div>
                 <div className="grid grid-cols-3">
-                  <label
-                    htmlFor="product_name"
-                    className="col-span-3 md:col-span-1 text-[#142309] font-medium mb-2"
-                  >
+                  <label htmlFor="product_name" className="col-span-3 md:col-span-1 text-[#142309] font-medium mb-2">
                     Harga
                   </label>
                   <input
@@ -296,13 +227,8 @@ const Add_Product = () => {
             </div> */}
             <div className="w-full flex justify-center md:justify-end pb-8 px-4 lg:px-0">
               <div className="flex gap-2 w-full md:w-1/3">
-                <button className="w-full px-4 py-2 rounded-md bg-white border border-red-500 text-red-500">
-                  Batal
-                </button>
-                <button
-                  onClick={handleAddProduct}
-                  className="w-full px-4 py-2 rounded-md bg-primaryhijau text-white"
-                >
+                <button className="w-full px-4 py-2 rounded-md bg-white border border-red-500 text-red-500">Batal</button>
+                <button onClick={handleAddProduct} className="w-full px-4 py-2 rounded-md bg-primaryhijau text-white">
                   Tambah
                 </button>
               </div>

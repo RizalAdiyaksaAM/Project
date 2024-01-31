@@ -27,12 +27,16 @@ export const Description_Section = () => {
 
   const idPenjual = dataDetail.id_user
 
+  console.log(dataDetail, "penjual");
+
   useEffect(() => {
     dispatch(getPenjual(idPenjual.penjualId))
 
   },[dispatch, idPenjual.penjualId]);
 
   console.log(dataPenjual, "detail");
+
+  
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/svg/LogoBroyur.svg";
 import ic_home from "../../assets/svg/ic_Home.svg";
 import ic_produk from "../../assets/svg/ic_file_dock_search.svg";
@@ -8,19 +8,33 @@ import ic_profile from "../../assets/img/cart_ic-User_fill.png";
 import img_product from "../../assets/img/profile_card-img-5.png";
 import { useDataProdukPenjual } from "../../services/product/get-produk";
 import { usePutProduct } from "../../services/product/put-product";
+import { useDispatch } from "react-redux";
+import getupdatesProduk from "../../redux/action/admin/putproduct";
 
 export default function Penjual_Produk_section() {
   const { data } = useDataProdukPenjual();
   const Produk = data ? data.data : [];
 
-  const [Stok, setStok] = useState("");
+  const [Stok, setStok] = useState(Produk[0]?.stok);
 
-  const { mutate: product } = usePutProduct();
-  const handlePutProduct = (id) => {
-    console.log("Stok saat ini:", Stok);
-    product(id, {
-      stok: Stok,
-    });
+  // const { mutate: product } = usePutProduct();
+  // const handlePutProduct = (id) => {
+  //   console.log("Stok saat ini:", Stok);
+  //   product(id, {
+  //     stok: Stok,
+  //   });
+  // };
+
+  const [isEditing, setIsEditing] = useState(false);
+  const dispatch = useDispatch();
+  const updatepasProduk = async (id_produk) => {
+    const success = await dispatch(
+      getupdatesProduk(id_produk, {
+        stok: Stok,
+      })
+    );
+    if (success) {
+    }
   };
 
   return (
@@ -83,7 +97,12 @@ export default function Penjual_Produk_section() {
                     </div>
                     <div className="item-produk flex items-center gap-[10px]">
                       <div className="wrap flex flex-col gap-[4px]">
-                        <input id="Stok" type="number" onChange={(e) => setStok(e.target.value)} className="text-[#62AF2F]"></input>
+                        {isEditing ? ( // Render input jika sedang dalam mode edit
+                          <input id="Stok" type="number" value={Stok} onChange={(e) => setStok(e.target.value)} className="text-[#62AF2F]" />
+                        ) : (
+                          // Render p jika tidak dalam mode edit
+                          <p className="text-[#888888]">{produk.stok}</p>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -93,14 +112,27 @@ export default function Penjual_Produk_section() {
                     </div>
                     <div className="item-produk flex items-center gap-[10px]">
                       <div className="wrap flex flex-col gap-[4px]">
-                        <button
-                          onClick={() => {
-                            handlePutProduct(produk.id);
-                          }}
-                          className="btn btn-link text-[#62AF2F]"
-                        >
-                          simpan
-                        </button>
+                        {isEditing ? (
+                          <button
+                            onClick={() => {
+                              updatepasProduk(produk.id);
+                              setIsEditing(false);
+                              // Keluar dari mode edit setelah menyimpan
+                            }}
+                            className="btn btn-link text-[#62AF2F]"
+                          >
+                            Simpan
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => {
+                              setIsEditing(true); // Masuk ke mode edit saat tombol edit diklik
+                            }}
+                            className="btn btn-link text-[#62AF2F]"
+                          >
+                            Edit
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>

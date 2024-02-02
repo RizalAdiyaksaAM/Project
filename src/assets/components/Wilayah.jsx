@@ -25,10 +25,10 @@ export const Wilayah = () => {
 
   return (
     <section className='wilayah py-[24px]'>
-      <div className="container w-auto  mx-[4rem] mb-[10rem] h-80 mt-10 ">
+      <div className="container w-auto  mx-[6rem] mb-[10rem] h-80 mt-10 ">
         <div className="space-y-2 mb-6">
           <p className="font-semibold text-xl">Wilayah Drop Point</p>
-          <div className="flex space-x-8 scroll-pl-6 snap-x overflow-scroll scrollbar-hide">
+          <div className="flex space-x-5 scroll-pl-6 snap-x overflow-scroll scrollbar-hide">
           <Button onClick={() => handleAlamat('Teluk')}
             className="snap-start relative  w-[11.5625rem] h-[3.25rem] flex flex-col justify-start items-start rounded-md bg-gradient-to-bl from-red-500 to-red-800">
                 <div className="w-[3rem] h-1 bg-white rounded-2xl mt-1 "></div>

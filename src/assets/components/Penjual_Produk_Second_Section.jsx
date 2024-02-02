@@ -6,6 +6,7 @@ import ic_pesanan from "../../assets/svg/ic_file_dock_search.svg";
 import ic_dropdown from "../../assets/svg/dropdown.svg";
 import ic_profile from "../../assets/img/cart_ic-User_fill.png";
 import img_product from "../../assets/img/profile_card-img-5.png";
+import { useDataProdukPenjual } from "../../services/product/get-produk";
 
 export default function Penjual_Produk_Second_Section() {
   return (

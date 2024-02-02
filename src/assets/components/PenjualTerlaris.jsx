@@ -4,7 +4,8 @@ import pointer from "../svg/pointer.svg"
 
 export const PenjualTerlaris = () => {
   return (
-    <div className="container mx-auto bg-abubg">
+    <div className="bg-abubg">
+    <div className="container mx-auto " >
       <div className="space-y-4 mx-[4rem]  ">
         <p className="font-semibold text-xl " >Penjual Terlaris</p>
         <div className="relative ">
@@ -12,7 +13,7 @@ export const PenjualTerlaris = () => {
             <p className="w-[9.5625rem] ">Penjual sayur keliling terlaris di Purwokerto Selatan</p>
           </div>
           <div className="absolute inset-y-16 left-[12.7rem]  ">
-            <div className="flex space-x-20 t ">
+            <div className="flex space-x-12 t ">
             <div className="flex justify-start items-center bg-white w-[21.4375rem] h-[8.5rem] shadow-md rounded-3xl">
                 <div className="">
                     <img  src="https://i.pravatar.cc/150?u=a04258114e29026708c" alt="" className="w-[8.1875rem] h-[8.5rem] rounded-s-3xl" />
@@ -62,6 +63,7 @@ export const PenjualTerlaris = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

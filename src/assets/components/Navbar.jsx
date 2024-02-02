@@ -45,10 +45,12 @@ export const Navbar = () => {
 
       if (userRole === "PEMBELI") {
         toast.success(`Hallo ${userName}, Selamat datang di Broyur`);
-        navigate("/home_pembeli");
+        // navigate("/home_pembeli");
+        window.location.reload();
       } else if (userRole === "PENJUAL") {
         toast.success(`Hallo ${userName} Penjual, Selamat datang `);
         navigate("/penjual_pesanan");
+        // window.location.reload();
       }
     } catch (err) {
       console.log(err, "err");
@@ -80,7 +82,7 @@ export const Navbar = () => {
             <img src={logo} alt="" />
             <div className="flex w-auto">
               <div className="relative block w-[432px] ">
-                <input placeholder="Cari Nama Penjual Sayur Keliling" className=" px-3 border border-abufont h-10 placeholder:font-semibold placeholder:text-base placeholder-[#CCCCCC] rounded-xl w-full" type="text"></input>
+                <input placeholder="Cari Nama Penjual Sayur Keliling" className=" px-3 border border-abufont h-10 placeholder:font-semibold placeholder:text-base placeholder-[#CCCCCC] focus:outline-none focus:border-primaryhijau rounded-xl w-full" type="text"></input>
                 <img className="absolute top-3  right-3 " src={search} alt="" />
               </div>
               <div>
@@ -106,13 +108,13 @@ export const Navbar = () => {
               <div className="space-x-2 flex">
                 {token ? (
                   <div className="flex space-x-6 ">
-                    <img src={shop} alt="" />
+                    {/* <img src={shop} alt="" /> */}
                     <div className="space-x-2 flex items-center gap-[32px]">
                       <Button
                         onClick={() => {
                           dispatch(LogOut());
                         }}
-                        className="text-base border-2 font-semibold text-white  bg-red-500"
+                        className="text-base border-2 font-semibold text-white  bg-red-500 z-10"
                       >
                         Logout
                       </Button>
@@ -122,86 +124,82 @@ export const Navbar = () => {
                     </div>
                   </div>
                 ) : (
-                  <>
-                  <div>
-                    <Button onPress={onOpen} className="text-base border-2 font-semibold text-primaryhijau border-primaryhijau bg-transparent">
-                      Masuk
-                    </Button>
-                    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-                      <ModalContent>
-                        {(onClose) => (
-                          <>
-                            <ModalHeader className="flex flex-col justify-center items-center gap-1 text-[#315818] font-bold ">Masuk</ModalHeader>
-                            <ToastContainer />
-                            <ModalBody>
-                              <div className="w-full flex flex-col justify-center items-center ">
-                                <div className="flex flex-col mb-[2rem] space-y-4 ">
-                                  <div>
-                                    <p>Email</p>
-                                    <input
-                                      id="email"
-                                      onChange={(e) => {
-                                        setEmail(e.target.value);
-                                      }}
-                                      className="w-[20rem] rounded-xl mt-1 border-2 border-[#D0D0D0] pl-4 py-1 "
-                                      placeholder="Masukkan Email"
-                                      type="email"
-                                    />
-                                  </div>
-                                  <div className="relative">
-                                    <p>Password</p>
-                                    <input
-                                      id="password"
-                                      onChange={(e) => {
-                                        setPassword(e.target.value);
-                                      }}
-                                      className="w-[20rem] rounded-xl mt-1 border-2 border-[#D0D0D0] pl-4 py-1"
-                                      placeholder="Masukkan Password"
-                                      type={showPassword ? "text" : "password"}
-                                    />
-                                    <span className="absolute bottom-2 right-4 " onClick={showpass}>
-                                      {showPassword ? (
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                                          {/* SVG Path */}
-                                        </svg>
-                                      ) : (
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                          {/* SVG Path */}
-                                        </svg>
-                                      )}
-                                    </span>
+                  <div className="flex gap-4">
+                    <div>
+                      <Daftar />
+                    </div>
+                    <div>
+                      <Button onPress={onOpen} className="text-base border-2 font-semibold text-primaryhijau border-primaryhijau bg-transparent z-10">
+                        Masuk
+                      </Button>
+                      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+                        <ModalContent className="mb-[10%]">
+                          {(onClose) => (
+                            <>
+                              <form>
+                                <ModalHeader className="flex flex-col justify-center items-center gap-1 text-[#315818] font-bold ">Masuk</ModalHeader>
+                              </form>
+
+                              <ToastContainer />
+                              <ModalBody>
+                                <div className="w-full flex flex-col justify-center items-center ">
+                                  <div className="flex flex-col mb-[2rem] space-y-4 ">
+                                    <div>
+                                      <p>Email</p>
+                                      <input
+                                        id="email"
+                                        onChange={(e) => {
+                                          setEmail(e.target.value);
+                                        }}
+                                        className="w-[20rem] rounded-xl mt-1 border-2 border-[#D0D0D0] pl-4 py-1 "
+                                        placeholder="Masukkan Email"
+                                        type="email"
+                                      />
+                                    </div>
+                                    <div className="relative">
+                                      <p>Password</p>
+                                      <input
+                                        id="password"
+                                        onChange={(e) => {
+                                          setPassword(e.target.value);
+                                        }}
+                                        className="w-[20rem] rounded-xl mt-1 border-2 border-[#D0D0D0] pl-4 py-1"
+                                        placeholder="Masukkan Password"
+                                        type={showPassword ? "text" : "password"}
+                                      />
+                                      <span className="absolute bottom-2 right-4 " onClick={showpass}>
+                                        {showPassword ? (
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                            {/* SVG Path */}
+                                          </svg>
+                                        ) : (
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            {/* SVG Path */}
+                                          </svg>
+                                        )}
+                                      </span>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            </ModalBody>
-                            <ModalFooter className="flex flex-col justify-center items-center gap-4 mt-[2rem] ">
-                              <Button
-                                onClick={() => {
-                                  handleloginUser();
-                                  onClose();
-                                }}
-                                className="text-base border-2 font-semibold text-white  bg-primaryhijau"
-                              >
-                                Masuk
-                              </Button>
-                              <div className="flex justify-center items-center w-full gap-1">
-                                <p className="text-sm">Belum punya akun ?</p>
-                                <a href="#" className="text-primaryhijau text-sm">
-                                  Daftar disini
-                                </a>
-                              </div>
-                            </ModalFooter>
-                          </>
-                        )}
-                      </ModalContent>
-                    </Modal>
+                              </ModalBody>
+                              <ModalFooter className="flex flex-col justify-center items-center gap-4 mt-[2rem] ">
+                                <Button
+                                  onClick={() => {
+                                    handleloginUser();
+                                    onClose();
+                                  }}
+                                  className="text-base border-2 font-semibold text-white  bg-primaryhijau"
+                                >
+                                  Masuk
+                                </Button>
+                              </ModalFooter>
+                            </>
+                          )}
+                        </ModalContent>
+                      </Modal>
+                    </div>
                   </div>
-                  <div>
-                  <Daftar />
-                </div>
-               </>
                 )}
-                
               </div>
             </div>
           </div>

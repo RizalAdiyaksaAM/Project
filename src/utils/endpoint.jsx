@@ -22,7 +22,8 @@ export const endpoint = {
     return `api/v1/transaksi/update/${id}`;
   },
   UPDATE_PRODUK: (id) => {
-    return `/api/v1/produk/update/${id}`;
+    return `api/v1/produk/update/${id}`;
   },
   GET_PRODUK_EDIT: `api/v1/produk/me`,
+  FILTER_PRODUK: "api/v1/transaksi/me",
 };

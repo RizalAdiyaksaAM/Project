@@ -60,6 +60,10 @@ function Penjual_Pesanan_Section() {
     return formattedTime;
   };
 
+  // const jumlahSemua = Filter.length;
+  // const jumlahDitolak = Filter.filter((item) => item.status === "DITOLAK").length;
+  // const jumlahDikonfirmasi = Filter.filter((item) => item.status === "DIKONFIRMASI").length;
+
   return (
     <div>
       <section className="section_pesanan bg-[#F8F8F8] h-screen">
@@ -73,7 +77,7 @@ function Penjual_Pesanan_Section() {
                 <img src={ic_produk} alt="" />
                 Produk
               </a>
-              <a href="/penjual_pesanan" className="flex items-center gap-[4px]">
+              <a href="/penjual_pesanan" className="flex items-center gap-[4px] text-green-600">
                 <img src={ic_pesanan} alt="" />
                 Pesanan
               </a>
@@ -82,13 +86,13 @@ function Penjual_Pesanan_Section() {
           <div className="pesanan bg-white w-full flex flex-col p-[16px] gap-[16px]">
             <h3>Daftar Pesanan</h3>
             <div className="nav-link flex gap-4">
-              <button onClick={(e) => setstatusfilter(e.target.value)} value="">
+              <button className={statusfilter === "" ? "text-green-600" : ""} onClick={(e) => setstatusfilter(e.target.value)} value="">
                 Semua
               </button>
-              <button onClick={(e) => setstatusfilter(e.target.value)} value="DITOLAK">
+              <button className={statusfilter === "DITOLAK" ? "text-green-600" : ""} onClick={(e) => setstatusfilter(e.target.value)} value="DITOLAK">
                 Ditolak
               </button>
-              <button onClick={(e) => setstatusfilter(e.target.value)} value="DIKONFIRMASI">
+              <button className={statusfilter === "DIKONFIRMASI" ? "text-green-600" : ""} onClick={(e) => setstatusfilter(e.target.value)} value="DIKONFIRMASI">
                 Dikonfirmasi
               </button>
             </div>

@@ -6,6 +6,7 @@ import GetPelanggan from "./GetPelanggan";
 import GetDetailProduct from "./product/GetDetailProduct";
 import Updatepasslicers from "./admin/putTransaction";
 import UpdatepassProduk from "./admin/putProduct";
+import CardAdm from "./admin/Get-Produk";
 
 export default combineReducers({
   login: authLogin,
@@ -15,4 +16,5 @@ export default combineReducers({
   detail: GetDetailProduct,
   update: Updatepasslicers,
   produk: UpdatepassProduk,
+  Card: CardAdm,
 });

@@ -29,6 +29,12 @@ export const Wilayah = () => {
         <div className="space-y-2 mb-6">
           <p className="font-semibold text-xl">Wilayah Drop Point</p>
           <div className="flex space-x-5 scroll-pl-6 snap-x overflow-scroll scrollbar-hide">
+          <Button onClick={() => handleAlamat('Arca')} className="snap-start relative  w-[11.5625rem] h-[3.25rem] flex flex-col justify-start items-start rounded-md bg-gradient-to-bl from-[#3C14B0] to-[#5C28F2]">
+                <div className="w-[3rem] h-1 bg-white rounded-2xl mt-1 "></div>
+                <p className="absolute top-2 text-white font-semibold text-base list-outside">
+                  All
+                </p>
+              </Button>
           <Button onClick={() => handleAlamat('Teluk')}
             className="snap-start relative  w-[11.5625rem] h-[3.25rem] flex flex-col justify-start items-start rounded-md bg-gradient-to-bl from-red-500 to-red-800">
                 <div className="w-[3rem] h-1 bg-white rounded-2xl mt-1 "></div>
@@ -67,12 +73,7 @@ export const Wilayah = () => {
                   Purwokerto Kidul
                 </p>
               </Button>
-              <Button onClick={() => handleAlamat('Arca')} className="snap-start relative  w-[11.5625rem] h-[3.25rem] flex flex-col justify-start items-start rounded-md bg-gradient-to-bl from-[#3C14B0] to-[#5C28F2]">
-                <div className="w-[3rem] h-1 bg-white rounded-2xl mt-1 "></div>
-                <p className="absolute top-2 text-white font-semibold text-base list-outside">
-                  Arca
-                </p>
-              </Button>
+             
           {/* {dataAll &&
           dataAll.map((course) => (
             <div className="space-y-5 col-span-2" key={course.id}>

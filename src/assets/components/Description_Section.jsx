@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import image_preview from "../../assets/img/description-preview-img.png";
 import image_profile from "../../assets/img/description-profile-img.svg";
 import ic_circle from "../../assets/img/description-circle.svg";
@@ -6,37 +6,34 @@ import ic_pin from "../../assets/img/description-ic-pin.svg";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import getDetail from "../../redux/action/product/detailProduct";
-import getPenjual from "../../redux/action/getPenjual";
+
 
 export const Description_Section = () => {
   const navigate = useNavigate();
   const params = useParams();
   const dispatch = useDispatch();
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  const handleDecrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+
+  };
   
- 
 
   useEffect(() => {
     dispatch(getDetail(params.productId))
 
   },[dispatch, params.productId]);
 
-  
-
   const dataDetail = useSelector((state) => state.detail.detail)
-  const dataPenjual = useSelector((state) => state.penjual.penjual[0])
-
-  const idPenjual = dataDetail.id_user
-
   console.log(dataDetail, "penjual");
 
-  useEffect(() => {
-    dispatch(getPenjual(idPenjual.penjualId))
-
-  },[dispatch, idPenjual.penjualId]);
-
-  console.log(dataPenjual, "detail");
-
-  
 
   return (
     <div>
@@ -45,13 +42,10 @@ export const Description_Section = () => {
           <div className="content-left wrap-preview flex flex-col gap-[16px]">
             <div className="preview ">
               <img
-                src={image_preview}
+                src={dataDetail.media[0]?.link}
                 alt=""
                 className="max-w-[500px] rounded-[8px]"
               />
-            </div>
-            <div className="choose">
-              <img src={image_preview} alt="" className="max-w-[150px]" />
             </div>
           </div>
           <div className="content-right flex flex-col gap-[30px]">
@@ -65,13 +59,13 @@ export const Description_Section = () => {
                 <div className="count flex items-center gap-[24px]">
                   <span>Jumlah</span>
                   <div className="number flex items-center border-1 py-[8px] px-[22px] rounded-[8px] border-[#888]">
-                    <span class="minus">-</span>
+                  <button onClick={handleIncrement}>+</button>
                     <input
                       type="text"
-                      value="1"
+                      value={count}
                       className="w-[50px] text-center"
                     />
-                    <span class="plus">+</span>
+                    <button onClick={handleDecrement}>-</button>
                   </div>
                   <span>tersedia</span>
                 </div>
@@ -95,7 +89,7 @@ export const Description_Section = () => {
               <div className="profile flex gap-[10px] items-center">
                 <img src={image_profile} alt="" />
                 <div className="profile-text text">
-                  <h4 className="text-title">{dataPenjual.nama}</h4>
+                  {/* <h4 className="text-title">{dataPenjual.nama}</h4> */}
                   <div className="info flex items-center gap-[4px]">
                     <img src={ic_circle} alt="" />
                     <span className="info-text">Libur</span>

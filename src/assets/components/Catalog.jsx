@@ -28,6 +28,8 @@ export const Catalog = () => {
 
   const dataPenjual = useSelector((state) => state.penjual.penjual[0])
 
+  console.log(dataPenjual, "penjual");
+
 
   return (
     <section className="catalog py-[100px] bg-[#F8F8F8]">
@@ -53,7 +55,7 @@ export const Catalog = () => {
                   navigate(`/description/${produk.id}`);
                 }} className="card rounded-[8px] bg-white shadow-black overflow-hidden drop-shadow-lg">
                 <img         
-                  src={profile_profile_card_image1}
+                  src={produk.media[0].link}
                   alt=""
                   className="card-image w-full"
                 />

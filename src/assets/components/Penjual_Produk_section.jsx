@@ -6,27 +6,30 @@ import ic_pesanan from "../../assets/svg/ic_file_dock_search.svg";
 import ic_dropdown from "../../assets/svg/dropdown.svg";
 import ic_profile from "../../assets/img/cart_ic-User_fill.png";
 import img_product from "../../assets/img/profile_card-img-5.png";
-import { useDataProdukPenjual } from "../../services/product/get-produk";
-import { usePutProduct } from "../../services/product/put-product";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import getupdatesProduk from "../../redux/action/admin/putproduct";
+import getDataCard from "../../redux/action/admin/Get-product";
 
 export default function Penjual_Produk_section() {
-  const { data } = useDataProdukPenjual();
-  const Produk = data ? data.data : [];
+  // const { data } = useDataProdukPenjual();
+  // const Produk = data ? data.data : [];
+  const dispatch = useDispatch();
+  // get product
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      dispatch(getDataCard());
+    }, 3000); // memanggil getDataCard setiap 3 detik
 
+    // Membersihkan interval saat komponen unmount
+    return () => clearInterval(intervalId);
+  }, [dispatch]);
+
+  const Produk = useSelector((state) => state.Card.card);
+  console.log(Produk, "produk");
   const [Stok, setStok] = useState(Produk[0]?.stok);
 
-  // const { mutate: product } = usePutProduct();
-  // const handlePutProduct = (id) => {
-  //   console.log("Stok saat ini:", Stok);
-  //   product(id, {
-  //     stok: Stok,
-  //   });
-  // };
-
+  // edit stok
   const [isEditing, setIsEditing] = useState(false);
-  const dispatch = useDispatch();
   const updatepasProduk = async (id_produk) => {
     const success = await dispatch(
       getupdatesProduk(id_produk, {
@@ -46,7 +49,7 @@ export default function Penjual_Produk_section() {
               <img src={logo} alt="" className="ic" />
             </a>
             <div className="nav-left-menu flex gap-[16px] flex-col">
-              <a href="/penjual_produk" className="flex items-center gap-[4px]">
+              <a href="/penjual_produk" className="flex items-center gap-[4px] text-green-600">
                 <img src={ic_produk} alt="" />
                 Produk
               </a>

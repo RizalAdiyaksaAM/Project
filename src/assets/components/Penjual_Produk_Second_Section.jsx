@@ -22,7 +22,7 @@ export default function Penjual_Produk_Second_Section() {
                 <img src={ic_home} alt="" />
                 Home
               </a>
-              <a href="#" className="flex items-center gap-[4px]">
+              <a href="#" className="flex items-center gap-[4px] ">
                 <img src={ic_produk} alt="" />
                 Produk
               </a>
